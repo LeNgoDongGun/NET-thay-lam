@@ -1,0 +1,14 @@
+D:\NET thay lam\bai2\GenericDemo\bin\Debug\net10.0\GenericDemo.exe
+D:\NET thay lam\bai2\GenericDemo\bin\Debug\net10.0\GenericDemo.deps.json
+D:\NET thay lam\bai2\GenericDemo\bin\Debug\net10.0\GenericDemo.runtimeconfig.json
+D:\NET thay lam\bai2\GenericDemo\bin\Debug\net10.0\GenericDemo.dll
+D:\NET thay lam\bai2\GenericDemo\bin\Debug\net10.0\GenericDemo.pdb
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.AssemblyInfoInputs.cache
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.AssemblyInfo.cs
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.csproj.CoreCompileInputs.cache
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.dll
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\refint\GenericDemo.dll
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.pdb
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\GenericDemo.genruntimeconfig.cache
+D:\NET thay lam\bai2\GenericDemo\obj\Debug\net10.0\ref\GenericDemo.dll

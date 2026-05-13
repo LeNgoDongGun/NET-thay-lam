@@ -1,0 +1,8 @@
+@model List<string>
+<h3>Danh sách sản phẩm theo Books</h3>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product</li>
+    }
+</ul>

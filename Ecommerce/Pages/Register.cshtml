@@ -1,0 +1,18 @@
+﻿@page
+@model RegisterModel
+<h2>Đăng ký tài khoản</h2>
+<form method="post">
+    <label asp-for="User.UserName"></label>
+    <input type="text" asp-for="User.UserName" />
+    <span asp-validation-for="User.UserName" class="text-danger"></span>
+    <br />
+    <label asp-for="User.Email"></label>
+    <input type="email" asp-for="User.Email" />
+    <span asp-validation-for="User.Email" class="text-danger"></span>
+    <br />
+    <label asp-for="User.Password"></label>
+    <input type="password" asp-for="User.Password" />
+    <span asp-validation-for="User.Password" class="text-danger"></span>
+    <br />
+    <button type="submit">Đăng ký</button>
+</form>

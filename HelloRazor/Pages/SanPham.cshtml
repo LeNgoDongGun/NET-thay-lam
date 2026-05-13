@@ -1,0 +1,65 @@
+﻿@page
+@model MyApp.Namespace.SanPhamModel
+@functions {
+    // Định nghĩa lớp SanPham
+class Sanpham
+{
+public int Id { get; set; }
+public string Name { get; set; }
+public int SoLuong { get; set; }
+public int Gia { get; set; }
+}
+}
+@{
+    // Tạo danh sách sinh viên
+List<Sanpham> sanphams = new()
+{
+new Sanpham { Id = 1, Name = "Laptop", SoLuong = 10, Gia = 15000000 },
+new Sanpham { Id = 2, Name = "Điện thoại", SoLuong = 20, Gia = 8000000 },
+new Sanpham { Id = 3, Name = "Tablet", SoLuong = 15, Gia = 5000000 }
+};
+Sanpham GetSelectedSanpham()
+{
+int sanphamId;
+if (int.TryParse(Request.Query["id"], out sanphamId))
+{
+return sanphams.FirstOrDefault(s => s.Id == sanphamId);
+}
+return null;
+}
+}
+<h2>Danh sách sản phẩm</h2>
+
+<table class="product-table">
+<tr>
+<th>ID</th>
+<th>Tên</th>
+<th>Số lượng</th>
+<th>Giá</th>
+<th>Hành động</th>
+</tr>
+@foreach (var sanpham in sanphams)
+{
+<tr>
+<td>@sanpham.Id</td>
+<td>@sanpham.Name</td>
+<td>@sanpham.SoLuong</td>
+<td>@sanpham.Gia</td>
+<td><a href="?id=@sanpham.Id">Chi tiết</a></td>
+</tr>
+}
+</table>
+@{
+var selectedSanpham = GetSelectedSanpham();
+if (selectedSanpham != null)
+{
+<div class="detail-container">
+<h3>Thông tin chi tiết sản phẩm</h3>
+<p><strong>ID:</strong> @selectedSanpham.Id</p>
+<p><strong>Tên:</strong> @selectedSanpham.Name</p>
+<p><strong>Số lượng:</strong> @selectedSanpham.SoLuong</p>
+<p><strong>Giá:</strong> @selectedSanpham.Gia</p>
+</div>
+}
+}
+

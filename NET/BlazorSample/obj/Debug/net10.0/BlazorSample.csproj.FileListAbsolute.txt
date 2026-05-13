@@ -1,0 +1,170 @@
+D:\NET\BlazorSample\bin\Debug\net10.0\appsettings.Development.json
+D:\NET\BlazorSample\bin\Debug\net10.0\appsettings.json
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.staticwebassets.runtime.json
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.staticwebassets.endpoints.json
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.exe
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.deps.json
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.runtimeconfig.json
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.dll
+D:\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.pdb
+D:\NET\BlazorSample\obj\Debug\net10.0\EmbeddedAttribute.cs
+D:\NET\BlazorSample\obj\Debug\net10.0\ValidatableTypeAttribute.cs
+D:\NET\BlazorSample\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.AssemblyInfoInputs.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.AssemblyInfo.cs
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.csproj.CoreCompileInputs.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.MvcApplicationPartsAssemblyInfo.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\NET\BlazorSample\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\NET\BlazorSample\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+D:\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+D:\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
+D:\NET\BlazorSample\obj\Debug\net10.0\scopedcss\bundle\BlazorSample.styles.css
+D:\NET\BlazorSample\obj\Debug\net10.0\scopedcss\projectbundle\BlazorSample.bundle.scp.css
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\itu7lbcgum-{0}-khy4lop6wu-khy4lop6wu.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\1ymhlmvylv-{0}-bqjiyaj88i-bqjiyaj88i.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\37qp4loxfr-{0}-c2jlpeoesf-c2jlpeoesf.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\xqnouizv8u-{0}-erw9l3u2r3-erw9l3u2r3.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\qe8l10nkkw-{0}-aexeepp0ev-aexeepp0ev.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\nb29abjqt5-{0}-d7shbmvgxk-d7shbmvgxk.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\f8ch5ctdp6-{0}-ausgxo2sd3-ausgxo2sd3.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\qtzqzyq8gs-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\sdq2mnwxm0-{0}-cosvhxvwiu-cosvhxvwiu.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\5vhcxtm3k8-{0}-ub07r2b239-ub07r2b239.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\8zw1v0z0kr-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\ptg5sum9zp-{0}-b7pk76d08c-b7pk76d08c.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\cf9anuaeet-{0}-fsbi9cje9m-fsbi9cje9m.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\vfw087uq7g-{0}-rzd6atqjts-rzd6atqjts.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\hyh0t36tuj-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\7av8sbzpoy-{0}-dxx9fxp4il-dxx9fxp4il.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\0dy97gpqdo-{0}-jd9uben2k1-jd9uben2k1.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\xl1vul64jk-{0}-khv3u5hwcm-khv3u5hwcm.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\r5z79h9yet-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\wb4kk9eytk-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\q9t64y5gnu-{0}-c2oey78nd0-c2oey78nd0.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\ounw6dwtfd-{0}-tdbxkamptv-tdbxkamptv.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\7b1vhh7ptb-{0}-j5mq2jizvt-j5mq2jizvt.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\53wo9qkgmi-{0}-06098lyss8-06098lyss8.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\re2t19tdcy-{0}-nvvlpmu67g-nvvlpmu67g.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\k3q53qu7mi-{0}-s35ty4nyc5-s35ty4nyc5.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\mlp3z17bei-{0}-pj5nd1wqec-pj5nd1wqec.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\2woppj8uzn-{0}-46ein0sx1k-46ein0sx1k.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\ma0vaht7em-{0}-v0zj4ognzu-v0zj4ognzu.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\g50x8ifu3i-{0}-37tfw0ft22-37tfw0ft22.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\lvruet2i51-{0}-hrwsygsryq-hrwsygsryq.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\k5ywqme0a8-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\8a5t68hwhv-{0}-ft3s53vfgj-ft3s53vfgj.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\ug50ohkm0p-{0}-6cfz1n2cew-6cfz1n2cew.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\974fz5ri9w-{0}-6pdc2jztkx-6pdc2jztkx.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\xr54ex428f-{0}-493y06b0oq-493y06b0oq.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\gkwd6cp55k-{0}-iovd86k7lj-iovd86k7lj.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\oukaibph01-{0}-vr1egmr9el-vr1egmr9el.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\gm8swtnggk-{0}-kbrnm935zg-kbrnm935zg.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\07s6ly7gnt-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\eraue2ya6h-{0}-y7v9cxd14o-y7v9cxd14o.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\mfcsr1s5kf-{0}-notf2xhcfb-notf2xhcfb.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\6fsz8nodbe-{0}-h1s4sie4z3-h1s4sie4z3.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\sfn14bseq9-{0}-63fj8s7r0e-63fj8s7r0e.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\vjp3v0bj1h-{0}-0j3bgjxly4-0j3bgjxly4.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\3ecpkt2ilh-{0}-abdmv1u4y3-abdmv1u4y3.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\masms9rhfg-{0}-2i0r6wwb69-2i0r6wwb69.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\ndao2y1wu3-{0}-iz83ucvm53-iz83ucvm53.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\e7u8yhe678-{0}-1xvifagex6-1xvifagex6.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\compressed\r3vnsrqixj-{0}-1xvifagex6-1xvifagex6.gz
+D:\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.json
+D:\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.development.json
+D:\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\NET\BlazorSample\obj\Debug\net10.0\swae.build.ex.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.dll
+D:\NET\BlazorSample\obj\Debug\net10.0\refint\BlazorSample.dll
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.pdb
+D:\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.genruntimeconfig.cache
+D:\NET\BlazorSample\obj\Debug\net10.0\ref\BlazorSample.dll
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\appsettings.Development.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\appsettings.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.staticwebassets.endpoints.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.staticwebassets.runtime.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.exe
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.deps.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.runtimeconfig.json
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.dll
+D:\NET thay lam\NET\BlazorSample\bin\Debug\net10.0\BlazorSample.pdb
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\EmbeddedAttribute.cs
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\ValidatableTypeAttribute.cs
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.GeneratedMSBuildEditorConfig.editorconfig
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.AssemblyInfoInputs.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.AssemblyInfo.cs
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.csproj.CoreCompileInputs.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.MvcApplicationPartsAssemblyInfo.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\scopedcss\bundle\BlazorSample.styles.css
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\scopedcss\projectbundle\BlazorSample.bundle.scp.css
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\itu7lbcgum-{0}-khy4lop6wu-khy4lop6wu.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\1ymhlmvylv-{0}-bqjiyaj88i-bqjiyaj88i.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\37qp4loxfr-{0}-c2jlpeoesf-c2jlpeoesf.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\xqnouizv8u-{0}-erw9l3u2r3-erw9l3u2r3.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\qe8l10nkkw-{0}-aexeepp0ev-aexeepp0ev.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\nb29abjqt5-{0}-d7shbmvgxk-d7shbmvgxk.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\f8ch5ctdp6-{0}-ausgxo2sd3-ausgxo2sd3.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\qtzqzyq8gs-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\sdq2mnwxm0-{0}-cosvhxvwiu-cosvhxvwiu.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\5vhcxtm3k8-{0}-ub07r2b239-ub07r2b239.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\8zw1v0z0kr-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\ptg5sum9zp-{0}-b7pk76d08c-b7pk76d08c.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\cf9anuaeet-{0}-fsbi9cje9m-fsbi9cje9m.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\vfw087uq7g-{0}-rzd6atqjts-rzd6atqjts.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\hyh0t36tuj-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\7av8sbzpoy-{0}-dxx9fxp4il-dxx9fxp4il.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\0dy97gpqdo-{0}-jd9uben2k1-jd9uben2k1.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\xl1vul64jk-{0}-khv3u5hwcm-khv3u5hwcm.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\r5z79h9yet-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\wb4kk9eytk-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\q9t64y5gnu-{0}-c2oey78nd0-c2oey78nd0.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\ounw6dwtfd-{0}-tdbxkamptv-tdbxkamptv.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\7b1vhh7ptb-{0}-j5mq2jizvt-j5mq2jizvt.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\53wo9qkgmi-{0}-06098lyss8-06098lyss8.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\re2t19tdcy-{0}-nvvlpmu67g-nvvlpmu67g.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\k3q53qu7mi-{0}-s35ty4nyc5-s35ty4nyc5.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\mlp3z17bei-{0}-pj5nd1wqec-pj5nd1wqec.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\2woppj8uzn-{0}-46ein0sx1k-46ein0sx1k.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\ma0vaht7em-{0}-v0zj4ognzu-v0zj4ognzu.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\g50x8ifu3i-{0}-37tfw0ft22-37tfw0ft22.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\lvruet2i51-{0}-hrwsygsryq-hrwsygsryq.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\k5ywqme0a8-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\8a5t68hwhv-{0}-ft3s53vfgj-ft3s53vfgj.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\ug50ohkm0p-{0}-6cfz1n2cew-6cfz1n2cew.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\974fz5ri9w-{0}-6pdc2jztkx-6pdc2jztkx.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\xr54ex428f-{0}-493y06b0oq-493y06b0oq.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\gkwd6cp55k-{0}-iovd86k7lj-iovd86k7lj.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\oukaibph01-{0}-vr1egmr9el-vr1egmr9el.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\gm8swtnggk-{0}-kbrnm935zg-kbrnm935zg.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\07s6ly7gnt-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\eraue2ya6h-{0}-y7v9cxd14o-y7v9cxd14o.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\mfcsr1s5kf-{0}-notf2xhcfb-notf2xhcfb.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\6fsz8nodbe-{0}-h1s4sie4z3-h1s4sie4z3.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\sfn14bseq9-{0}-63fj8s7r0e-63fj8s7r0e.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\vjp3v0bj1h-{0}-0j3bgjxly4-0j3bgjxly4.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\3ecpkt2ilh-{0}-abdmv1u4y3-abdmv1u4y3.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\masms9rhfg-{0}-2i0r6wwb69-2i0r6wwb69.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\ndao2y1wu3-{0}-iz83ucvm53-iz83ucvm53.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\e7u8yhe678-{0}-1xvifagex6-1xvifagex6.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\compressed\r3vnsrqixj-{0}-1xvifagex6-1xvifagex6.gz
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.development.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\swae.build.ex.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.dll
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\refint\BlazorSample.dll
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.pdb
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\BlazorSample.genruntimeconfig.cache
+D:\NET thay lam\NET\BlazorSample\obj\Debug\net10.0\ref\BlazorSample.dll

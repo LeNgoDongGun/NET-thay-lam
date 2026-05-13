@@ -1,0 +1,18 @@
+﻿@page
+@model LoginModel
+<h2>Đăng nhập</h2>
+<form method="post">
+    <label for="username">Tên đăng nhập:</label>
+    <input type="text" id="username" name="Username" required />
+    <br />
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="Password" required />
+    <br />
+    <button type="submit">Đăng nhập</button>
+</form>
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p>@Model.Message</p>
+}
+
+

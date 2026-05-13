@@ -1,0 +1,10 @@
+@model List<string>
+<div>
+    <h3>Sản phẩm bán chạy</h3>
+    <ul>
+        @foreach (var product in Model)
+        {
+            <li>@product</li>
+        }
+    </ul>
+</div>

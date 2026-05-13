@@ -1,0 +1,40 @@
+﻿@page
+@model ProductModel
+<div class="container">
+    <h3>Tìm kiếm sản phẩm</h3>
+    <form method="get">
+        <input type="text" name="Keyword" placeholder="Nhập tên sản phẩm..." value="@Model.Keyword" />
+        <button type="submit" class="btn btn-primary">Tìm</button>
+    </form>
+
+    <h2>Danh sách sản phẩm</h2>
+    <!-- Nút -->
+    <a asp-page-handler="RemoveAll" class="btn btn-danger">Xóa tất cả sản phẩm</a>
+    <a asp-page-handler="LoadAll" class="btn btn-success">Nạp tất cả sản phẩm</a>
+
+    <h3>Thêm sản phẩm mới</h3>
+    <form method="post">
+        <input type="text" name="NewProduct.Name" placeholder="Tên sản phẩm" required />
+        <br />
+        <input type="text" name="NewProduct.Description" placeholder="Mô tả" required />
+        <br />
+        <input type="number" name="NewProduct.Price" placeholder="Giá" required />
+        <br />
+        <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+    </form>
+
+    @await Component.InvokeAsync("ProductList", new { keyword = Model.Keyword, sapXepTang = true })
+    <hr />
+    @if (Model.SelectedProduct != null)
+    {
+        <h3>Chi tiết sản phẩm</h3>
+        <p><strong>Tên:</strong> @Model.SelectedProduct.Name</p>
+        <p><strong>Giá:</strong> @Model.SelectedProduct.Price</p>
+        <p><strong>Mô tả:</strong> @Model.SelectedProduct.Description</p>
+    }
+
+
+    @await Component.InvokeAsync("BestSellers", new { count = 3 })
+
+    @await Component.InvokeAsync("Product", new { category = "Books" })
+</div>

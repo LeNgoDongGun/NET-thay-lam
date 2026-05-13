@@ -1,0 +1,24 @@
+.product-table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:15px;
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.product-table th{
+    background:#007bff;
+    color:white;
+    text-align:left;
+}
+
+.product-table th,
+.product-table td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+.product-table tr:hover{
+    background:#f1f7ff;
+}

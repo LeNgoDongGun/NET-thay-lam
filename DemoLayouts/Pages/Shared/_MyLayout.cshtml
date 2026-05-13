@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<title>@ViewBag.Title</title>
+</head>
+<body>
+<header style="background-color:yellowgreen">
+<h1>Ứng dụng Razor Pages</h1>
+<nav>
+<a href="/">Trang chủ</a> |
+<a href="/About">Giới thiệu</a>
+</nav>
+</header>
+<div class="container" style="background: white;">
+@RenderBody() <!-- Render nội dung các trang con ở đây -->
+</div>
+<footer style="background-color:gold">
+<p>&copy; 2025 - Razor Pages App</p>
+</footer>
+</body>
+</html>

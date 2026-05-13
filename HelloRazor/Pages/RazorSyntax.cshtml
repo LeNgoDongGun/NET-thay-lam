@@ -1,0 +1,12 @@
+﻿@page
+@model MyApp.Namespace.RazorSyntaxModel // Chỉnh lại namespace nếu cần
+@{
+var dishes = new List<string> { "Cơm tấm", "Phở", "Bún bò Huế" };
+}
+<h2>Danh sách món ăn:</h2>
+<ul>
+@foreach (var dish in dishes)
+{
+<li>@dish</li>
+}
+</ul>

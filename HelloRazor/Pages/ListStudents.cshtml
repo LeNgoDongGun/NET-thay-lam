@@ -1,0 +1,63 @@
+﻿@page
+@model MyApp.Namespace.ListStudentsModel // Chỉnh lại namespace nếu cần (xem file .cs)
+@functions {
+// Định nghĩa lớp Student
+class Student
+{
+public int Id { get; set; }
+public string Name { get; set; }
+public int Age { get; set; }
+public string Major { get; set; }
+}
+}
+@{
+// Tạo danh sách sinh viên
+List<Student> students = new()
+{
+new Student { Id = 1, Name = "Nguyễn Văn A", Age = 20, Major = "CNTT" },
+new Student { Id = 2, Name = "Trần Thị B", Age = 21, Major = "Kinh tế" },
+new Student { Id = 3, Name = "Lê Văn C", Age = 22, Major = "Quản trị kinh doanh" }
+};
+Student GetSelectedStudent()
+{
+int studentId;
+if (int.TryParse(Request.Query["id"], out studentId))
+{
+return students.FirstOrDefault(s => s.Id == studentId);
+}
+return null;
+}
+}
+<h2>Danh sách sinh viên</h2>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Tên</th>
+<th>Tuổi</th>
+<th>Ngành học</th>
+<th>Hành động</th>
+</tr>
+@foreach (var student in students)
+{
+<tr>
+<td>@student.Id</td>
+<td>@student.Name</td>
+<td>@student.Age</td>
+<td>@student.Major</td>
+<td><a href="?id=@student.Id">Chi tiết</a></td>
+</tr>
+}
+</table>
+@{
+var selectedStudent = GetSelectedStudent();
+if (selectedStudent != null)
+{
+<div class="detail-container">
+<h3>Thông tin chi tiết sinh viên</h3>
+<p><strong>ID:</strong> @selectedStudent.Id</p>
+<p><strong>Tên:</strong> @selectedStudent.Name</p>
+<p><strong>Tuổi:</strong> @selectedStudent.Age</p>
+<p><strong>Ngành học:</strong> @selectedStudent.Major</p>
+</div>
+}
+}

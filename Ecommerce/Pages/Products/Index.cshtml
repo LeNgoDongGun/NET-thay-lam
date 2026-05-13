@@ -1,0 +1,18 @@
+﻿@page
+@using ECommerce.Models
+
+@{
+    var Products = new List<Product>
+    {
+        new Product { Id = 1, Name = "Vợt cầu lông", Price = 500000, Description = "Vợt xịn" },
+        new Product { Id = 2, Name = "Giày cầu lông", Price = 800000, Description = "Giày nhẹ" },
+        new Product { Id = 3, Name = "Áo thể thao", Price = 300000, Description = "Thoáng mát" }
+    };
+}
+
+<h2>Danh sách sản phẩm</h2>
+
+@foreach (var item in Products)
+{
+    <partial name="_ProductItem" model="item" />
+}

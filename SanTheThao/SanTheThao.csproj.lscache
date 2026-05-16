@@ -60,6 +60,8 @@ DTOs/Dtos.cs
 Migrations/
  20260515093615_InitialCreate.cs
  20260515093615_InitialCreate.Designer.cs
+ 20260516152050_FixAdminHash.cs
+ 20260516152050_FixAdminHash.Designer.cs
  AppDbContextModelSnapshot.cs
 Models/
  Booking.cs
@@ -71,10 +73,21 @@ obj/Debug/net10.0/
  SanTheThao.AssemblyInfo.cs
  SanTheThao.GlobalUsings.g.cs
  SanTheThao.RazorAssemblyInfo.cs
+Pages/Admin/
+ Bookings.cshtml.cs
+ Courts.cshtml.cs
+ Dashboard.cshtml.cs
 Pages/Auth/
  Login.cshtml.cs
  Logout.cshtml.cs
  Register.cshtml.cs
+Pages/Booking/
+ Create.cshtml.cs
+ MyBookings.cshtml.cs
+ Success.cshtml.cs
+Pages/Courts/
+ Details.cshtml.cs
+ Index.cshtml.cs
 Pages/
  Error.cshtml.cs
  Index.cshtml.cs
@@ -459,10 +472,21 @@ Services/
 obj/Debug/net10.0/SanTheThao.GeneratedMSBuildEditorConfig.editorconfig
 
 [additionalFiles]
+Pages/Admin/
+ Bookings.cshtml
+ Courts.cshtml
+ Dashboard.cshtml
 Pages/Auth/
  Login.cshtml
  Logout.cshtml
  Register.cshtml
+Pages/Booking/
+ Create.cshtml
+ MyBookings.cshtml
+ Success.cshtml
+Pages/Courts/
+ Detail.cshtml
+ Index.cshtml
 Pages/
  Error.cshtml
  Index.cshtml
@@ -474,10 +498,21 @@ Pages/
  _ViewStart.cshtml
 
 [dynamicFiles]
+Pages/Admin/
+ Bookings.cshtml
+ Courts.cshtml
+ Dashboard.cshtml
 Pages/Auth/
  Login.cshtml
  Logout.cshtml
  Register.cshtml
+Pages/Booking/
+ Create.cshtml
+ MyBookings.cshtml
+ Success.cshtml
+Pages/Courts/
+ Detail.cshtml
+ Index.cshtml
 Pages/
  Error.cshtml
  Index.cshtml

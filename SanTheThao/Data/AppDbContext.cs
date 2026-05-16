@@ -64,7 +64,7 @@ namespace SanTheThao.Data
                     FullName = "Admin",
                     Email = "admin@santhethao.com",
                     PhoneNumber = "0900000000",
-                    PasswordHash = "$2a$11$zu5V9QqrV7bXMKbSe/TnFOIjuJRZdQ3qGl.Y2cUQiGJHDFJOt37FS",
+                    PasswordHash = "$2a$11$43uD9/LEK4I160H3wmYi7urqfovNxCADfQxW03.5WDaxu1zQSwSMS",
                     Role = "Admin",
                     IsActive = true,
                     CreatedAt = new DateTime(2025, 1, 1)

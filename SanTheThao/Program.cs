@@ -45,5 +45,4 @@ app.UseAuthentication();   // Phải trước UseAuthorization
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 app.Run();

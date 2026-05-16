@@ -1,0 +1,86 @@
+@page
+@model SanTheThao.Pages.Courts.IndexModel
+@{
+    ViewData["Title"] = "Danh sách sân";
+    Layout = "_Layout";
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h4 class="fw-bold mb-0">
+        @if (Model.SelectedSport != null)
+        {
+            <span>@Model.SelectedSport.Icon @Model.SelectedSport.Name</span>
+        }
+        else
+        {
+            <span>🏟️ Tất cả sân</span>
+        }
+    </h4>
+    <span class="text-muted small">@Model.Courts.Count sân</span>
+</div>
+
+<!-- Filter môn thể thao -->
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <a asp-page="/Courts/Index"
+       class="btn btn-sm @(Model.SportTypeId == null ? "btn-primary" : "btn-outline-secondary")">
+        Tất cả
+    </a>
+    @foreach (var sport in Model.SportTypes)
+    {
+        <a asp-page="/Courts/Index" asp-route-sportTypeId="@sport.Id"
+           class="btn btn-sm @(Model.SportTypeId == sport.Id ? "btn-primary" : "btn-outline-secondary")">
+            @sport.Icon @sport.Name
+        </a>
+    }
+</div>
+
+<!-- Danh sách sân -->
+@if (!Model.Courts.Any())
+{
+    <div class="text-center py-5 text-muted">
+        <div style="font-size:3rem">🏟️</div>
+        <p class="mt-2">Không có sân nào</p>
+    </div>
+}
+else
+{
+    <div class="row g-3">
+        @foreach (var court in Model.Courts)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm court-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <span style="font-size:1.5rem">@court.SportType.Icon</span>
+                            <span class="badge bg-primary ms-2 small">@court.SportType.Name</span>
+                        </div>
+                        <h6 class="fw-bold">@court.Name</h6>
+                        @if (!string.IsNullOrEmpty(court.Description))
+                        {
+                            <p class="text-muted small mb-2">@court.Description</p>
+                        }
+                        <div class="fw-semibold text-success">
+                            @court.PricePerHour.ToString("N0") VNĐ / giờ
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0">
+                        <a asp-page="/Courts/Detail" asp-route-id="@court.Id" class="btn btn-primary w-100 fw-semibold">
+                            Xem lịch & Đặt sân
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<style>
+    .court-card {
+        transition: transform .15s, box-shadow .15s;
+    }
+
+    .court-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    }
+</style>

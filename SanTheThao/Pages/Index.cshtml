@@ -1,10 +1,72 @@
 ﻿@page
-@model IndexModel
+@model SanTheThao.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Trang chủ";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="text-center py-5 mb-4 rounded-3" style="background: linear-gradient(135deg, #1a73e8, #0d47a1); color:white">
+    <h1 class="fw-bold display-5">🏟️ Đặt Sân Thể Thao</h1>
+    <p class="lead mt-2 mb-4">Đặt sân nhanh chóng, tiện lợi — mọi lúc mọi nơi</p>
+    <a asp-page="/Courts/Index" class="btn btn-light btn-lg fw-semibold px-4">
+        Đặt sân ngay →
+    </a>
 </div>
+
+<!-- Chọn môn thể thao -->
+<h4 class="fw-bold mb-3">Chọn môn thể thao</h4>
+<div class="row g-3">
+    @foreach (var sport in Model.SportTypes)
+    {
+        <div class="col-6 col-md-4 col-lg-2">
+            <a asp-page="/Courts/Index" asp-route-sportTypeId="@sport.Id"
+               class="card text-center text-decoration-none h-100 border-0 shadow-sm sport-card">
+                <div class="card-body py-4">
+                    <div style="font-size:2.5rem">@sport.Icon</div>
+                    <div class="fw-semibold mt-2">@sport.Name</div>
+                    <div class="text-muted small">@sport.Courts.Count sân</div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+<!-- Hướng dẫn -->
+<div class="mt-5">
+    <h4 class="fw-bold mb-3">Cách đặt sân</h4>
+    <div class="row g-3 text-center">
+        <div class="col-md-4">
+            <div class="card border-0 bg-light h-100 p-3">
+                <div style="font-size:2rem">1️⃣</div>
+                <h6 class="fw-bold mt-2">Chọn môn & sân</h6>
+                <p class="small text-muted mb-0">Chọn môn thể thao và sân phù hợp với bạn</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 bg-light h-100 p-3">
+                <div style="font-size:2rem">2️⃣</div>
+                <h6 class="fw-bold mt-2">Chọn ngày & giờ</h6>
+                <p class="small text-muted mb-0">Xem lịch trống và chọn khung giờ muốn đặt</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 bg-light h-100 p-3">
+                <div style="font-size:2rem">3️⃣</div>
+                <h6 class="fw-bold mt-2">Xác nhận & chơi</h6>
+                <p class="small text-muted mb-0">Xác nhận đặt sân và đến sân đúng giờ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .sport-card {
+        transition: transform .15s, box-shadow .15s;
+    }
+
+    .sport-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    }
+</style>

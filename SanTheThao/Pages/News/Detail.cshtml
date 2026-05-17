@@ -1,0 +1,69 @@
+@page "{slug}"
+@model SanTheThao.Pages.News.DetailModel
+@{
+    ViewData["Title"] = Model.Post?.Title ?? "Tin tức";
+    Layout = "_Layout";
+}
+
+@if (Model.Post == null)
+{
+    <div class="alert alert-warning">Bài viết không tồn tại</div>
+    return;
+}
+
+<div class="row">
+    <div class="col-lg-8">
+
+        <!-- Breadcrumb -->
+        <nav class="mb-3">
+            <ol class="breadcrumb small">
+                <li class="breadcrumb-item"><a asp-page="/Index">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a asp-page="/News/Index">Tin tức</a></li>
+                <li class="breadcrumb-item active">@Model.Post.Title</li>
+            </ol>
+        </nav>
+
+        <!-- Bài viết -->
+        <span class="badge bg-primary mb-2">@Model.Post.Category</span>
+        <h2 class="fw-bold mb-2">@Model.Post.Title</h2>
+        <div class="text-muted small mb-4">
+            ✍️ @Model.Post.Author.FullName &nbsp;•&nbsp;
+            📅 @Model.Post.CreatedAt.ToString("dd/MM/yyyy")
+        </div>
+
+        <p class="lead text-muted border-start border-4 border-primary ps-3 mb-4">
+            @Model.Post.Summary
+        </p>
+
+        <div class="lh-lg">
+            @Model.Post.Content
+        </div>
+
+        <hr class="my-4">
+        <a asp-page="/News/Index" class="btn btn-outline-secondary btn-sm">← Quay lại tin tức</a>
+
+    </div>
+
+    <!-- Sidebar bài liên quan -->
+    <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3">📌 Bài viết liên quan</h6>
+                @if (!Model.RelatedPosts.Any())
+                {
+                    <p class="text-muted small">Không có bài viết liên quan</p>
+                }
+                @foreach (var related in Model.RelatedPosts)
+                {
+                    <a asp-page="/News/Detail" asp-route-slug="@related.Slug"
+                       class="d-block text-decoration-none text-dark mb-3 pb-3 border-bottom">
+                        <div class="small fw-semibold">@related.Title</div>
+                        <div class="text-muted" style="font-size:0.75rem">
+                            @related.CreatedAt.ToString("dd/MM/yyyy")
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

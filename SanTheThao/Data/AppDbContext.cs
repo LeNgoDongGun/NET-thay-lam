@@ -11,6 +11,7 @@ namespace SanTheThao.Data
         public DbSet<SportType> SportTypes { get; set; }
         public DbSet<Court> Courts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<NewsPost> NewsPosts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,7 +57,6 @@ namespace SanTheThao.Data
             );
 
             // Admin mặc định (password: Admin@123)
-            // PasswordHash được tạo sẵn tĩnh, không dùng BCrypt động
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -68,6 +68,58 @@ namespace SanTheThao.Data
                     Role = "Admin",
                     IsActive = true,
                     CreatedAt = new DateTime(2025, 1, 1)
+                }
+            );
+
+            // Bài viết mẫu
+            modelBuilder.Entity<NewsPost>().HasData(
+                new NewsPost
+                {
+                    Id = 1,
+                    AuthorId = 1,
+                    Category = "Cầu lông",
+                    IsPublished = true,
+                    CreatedAt = new DateTime(2025, 1, 10),
+                    Title = "5 lợi ích tuyệt vời của việc chơi cầu lông mỗi ngày",
+                    Slug = "loi-ich-choi-cau-long",
+                    Summary = "Cầu lông không chỉ là môn thể thao vui vẻ mà còn mang lại vô số lợi ích sức khoẻ bạn chưa biết.",
+                    Content = "Cầu lông là một trong những môn thể thao phổ biến nhất tại Việt Nam. Chơi cầu lông đều đặn giúp cải thiện sức bền tim mạch, tăng cường phản xạ, giảm stress và đốt cháy calories hiệu quả."
+                },
+                new NewsPost
+                {
+                    Id = 2,
+                    AuthorId = 1,
+                    Category = "Pickleball",
+                    IsPublished = true,
+                    CreatedAt = new DateTime(2025, 2, 5),
+                    Title = "Pickleball — Môn thể thao hot nhất 2025 tại Việt Nam",
+                    Slug = "pickleball-hot-2025",
+                    Summary = "Pickleball đang bùng nổ tại Việt Nam với hàng nghìn người chơi mới mỗi tháng. Tìm hiểu ngay!",
+                    Content = "Pickleball là sự kết hợp giữa tennis, bóng bàn và cầu lông. Môn này phù hợp mọi lứa tuổi, dễ học và rất thú vị. Năm 2025, Pickleball đã có mặt tại hầu hết các tỉnh thành lớn ở Việt Nam."
+                },
+                new NewsPost
+                {
+                    Id = 3,
+                    AuthorId = 1,
+                    Category = "Bóng đá",
+                    IsPublished = true,
+                    CreatedAt = new DateTime(2025, 3, 1),
+                    Title = "Hướng dẫn chọn giày đá bóng phù hợp với loại sân",
+                    Slug = "chon-giay-da-bong",
+                    Summary = "Giày đá bóng sai loại sân không chỉ ảnh hưởng hiệu suất mà còn dễ gây chấn thương.",
+                    Content = "Có 3 loại giày phổ biến: FG (sân cỏ tự nhiên), AG (sân cỏ nhân tạo) và TF (sân phủi). Tại Việt Nam hầu hết sân mini là cỏ nhân tạo nên chọn giày AG hoặc TF để tránh trơn trượt."
+                },
+                new NewsPost
+                {
+                    Id = 4,
+                    AuthorId = 1,
+                    Category = "Bóng rổ",
+                    IsPublished = true,
+                    CreatedAt = new DateTime(2025, 4, 15),
+                    Title = "Bóng rổ 3x3 — Xu hướng mới cho giới trẻ Việt",
+                    Slug = "bong-ro-3x3-xu-huong",
+                    Summary = "Bóng rổ 3x3 đang thu hút đông đảo giới trẻ Việt Nam nhờ format nhanh, kịch tính và dễ tổ chức.",
+                    Content = "Bóng rổ 3x3 chỉ cần 1 rổ, 3 người mỗi đội và sân nhỏ hơn. Trận đấu kéo dài 10 phút hoặc đội nào đạt 21 điểm trước sẽ thắng. Format này rất phù hợp cho sân bóng rổ đô thị."
                 }
             );
         }

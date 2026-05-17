@@ -131,7 +131,6 @@ D:\NET thay lam\SanTheThao\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\scopedcss\bundle\SanTheThao.styles.css
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\scopedcss\projectbundle\SanTheThao.bundle.scp.css
-D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\69x7ax46pi-{0}-61n19gt1b8-61n19gt1b8.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\pdec3t7xxc-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\lz1wjhlj8q-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -224,3 +223,4 @@ D:\NET thay lam\SanTheThao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspace
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-bfibpjf851-bfibpjf851.gz

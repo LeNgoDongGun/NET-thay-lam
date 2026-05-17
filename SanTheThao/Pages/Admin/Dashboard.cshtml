@@ -54,7 +54,8 @@
 <!-- Điều hướng Admin -->
 <div class="row g-3 mb-4">
     <div class="col-md-6">
-        <a asp-page="/Admin/Bookings" class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
+        <a asp-page="/Admin/Bookings"
+           class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
             <div class="d-flex align-items-center gap-3">
                 <span style="font-size:2rem">📋</span>
                 <div>
@@ -65,12 +66,38 @@
         </a>
     </div>
     <div class="col-md-6">
-        <a asp-page="/Admin/Courts" class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
+        <a asp-page="/Admin/Courts"
+           class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
             <div class="d-flex align-items-center gap-3">
                 <span style="font-size:2rem">🏟️</span>
                 <div>
                     <div class="fw-bold">Quản lý sân</div>
                     <div class="text-muted small">Thêm, sửa, ẩn/hiện sân</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <a asp-page="/Admin/Users"
+           class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
+            <div class="d-flex align-items-center gap-3">
+                <span style="font-size:2rem">👥</span>
+                <div>
+                    <div class="fw-bold">Quản lý người dùng</div>
+                    <div class="text-muted small">Khoá/mở tài khoản, xem danh sách</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a asp-page="/Admin/News" class="card border-0 shadow-sm text-decoration-none text-dark p-3 d-block admin-card">
+            <div class="d-flex align-items-center gap-3">
+                <span style="font-size:2rem">📰</span>
+                <div>
+                    <div class="fw-bold">Quản lý tin tức</div>
+                    <div class="text-muted small">Thêm, sửa, xóa bài viết</div>
                 </div>
             </div>
         </a>
@@ -99,14 +126,14 @@
                     {
                         var badge = b.Status switch
                         {
-                            BookingStatus.Pending   => "warning text-dark",
+                            BookingStatus.Pending => "warning text-dark",
                             BookingStatus.Confirmed => "success",
                             BookingStatus.Cancelled => "danger",
                             _ => "secondary"
                         };
                         var statusText = b.Status switch
                         {
-                            BookingStatus.Pending   => "Chờ xác nhận",
+                            BookingStatus.Pending => "Chờ xác nhận",
                             BookingStatus.Confirmed => "Đã xác nhận",
                             BookingStatus.Cancelled => "Đã hủy",
                             _ => ""
@@ -129,6 +156,12 @@
 </div>
 
 <style>
-    .admin-card { transition: transform .15s, box-shadow .15s; }
-    .admin-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important; }
+    .admin-card {
+        transition: transform .15s, box-shadow .15s;
+    }
+
+    .admin-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    }
 </style>

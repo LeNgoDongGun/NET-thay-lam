@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,76 +8,92 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
-        <a class="navbar-brand fw-bold" asp-page="/Index">🏟️ Sân Thể Thao</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-page="/Index">🏟️ Sân Thể Thao</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" asp-page="/Index">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-page="/Courts/Index">Đặt sân</a>
-                </li>
-                @if (User.Identity?.IsAuthenticated == true)
-                {
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" asp-page="/Booking/MyBookings">Lịch sử đặt</a>
+                        <a class="nav-link" asp-page="/Index">Trang chủ</a>
                     </li>
-                }
-                @if (User.IsInRole("Admin"))
-                {
                     <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Dashboard">⚙️ Admin</a>
+                        <a class="nav-link" asp-page="/Courts/Index">Đặt sân</a>
                     </li>
-                }
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/News/Index">Tin tức</a>
+                    </li>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Booking/MyBookings">Lịch sử đặt</a>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">⚙️ Admin</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/Dashboard">Dashboard</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Bookings">Quản lý đơn</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Courts">Quản lý sân</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Users">Quản lý tài khoản</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/News">Quản lý tin tức</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
 
-            <ul class="navbar-nav ms-auto">
-                @if (User.Identity?.IsAuthenticated == true)
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                            👤 @User.Identity.Name
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" asp-page="/Auth/Logout">Đăng xuất</a></li>
-                        </ul>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Auth/Login">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light btn-sm px-3 ms-2" asp-page="/Auth/Register">Đăng ký</a>
-                    </li>
-                }
-            </ul>
+                <ul class="navbar-nav ms-auto">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                👤 @User.Identity.Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" asp-page="/Account/Profile">Thông tin cá nhân</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" asp-page="/Auth/Logout">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Auth/Login">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-light btn-sm px-3 ms-2" asp-page="/Auth/Register">Đăng ký</a>
+                        </li>
+                    }
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <div class="container py-4">
+        @RenderBody()
     </div>
-</nav>
 
-<div class="container py-4">
-    @RenderBody()
-</div>
+    <footer class="bg-light text-center text-muted py-3 mt-5 small border-top">
+        © 2025 Sân Thể Thao — Đặt sân nhanh, chơi vui!
+    </footer>
 
-<footer class="bg-light text-center text-muted py-3 mt-5 small border-top">
-    © 2025 Sân Thể Thao — Đặt sân nhanh, chơi vui!
-</footer>
-
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-@await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

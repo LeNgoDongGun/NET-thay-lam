@@ -11,7 +11,8 @@
     return;
 }
 
-<div class="row">
+<div class="row g-4">
+    <!-- Bài viết chính -->
     <div class="col-lg-8">
 
         <!-- Breadcrumb -->
@@ -23,7 +24,25 @@
             </ol>
         </nav>
 
-        <!-- Bài viết -->
+        <!-- Ảnh thumbnail -->
+        <div class="card border-0 shadow-sm mb-4" style="overflow:hidden;border-radius:12px!important">
+            <div style="height:300px;overflow:hidden;background:#f3f4f6">
+                @if (!string.IsNullOrEmpty(Model.Post.ThumbnailUrl))
+                {
+                    <img src="@Model.Post.ThumbnailUrl" alt="@Model.Post.Title"
+                         style="width:100%;height:100%;object-fit:cover" />
+                }
+                else
+                {
+                    <div class="d-flex align-items-center justify-content-center h-100"
+                         style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+                        <span style="font-size:6rem">📰</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Nội dung -->
         <span class="badge bg-primary mb-2">@Model.Post.Category</span>
         <h2 class="fw-bold mb-2">@Model.Post.Title</h2>
         <div class="text-muted small mb-4">
@@ -35,18 +54,15 @@
             @Model.Post.Summary
         </p>
 
-        <div class="lh-lg">
-            @Model.Post.Content
-        </div>
+        <div class="lh-lg">@Model.Post.Content</div>
 
         <hr class="my-4">
         <a asp-page="/News/Index" class="btn btn-outline-secondary btn-sm">← Quay lại tin tức</a>
-
     </div>
 
-    <!-- Sidebar bài liên quan -->
-    <div class="col-lg-4 mt-4 mt-lg-0">
-        <div class="card border-0 shadow-sm">
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <div class="card border-0 shadow-sm mb-3">
             <div class="card-body">
                 <h6 class="fw-bold mb-3">📌 Bài viết liên quan</h6>
                 @if (!Model.RelatedPosts.Any())
@@ -56,7 +72,21 @@
                 @foreach (var related in Model.RelatedPosts)
                 {
                     <a asp-page="/News/Detail" asp-route-slug="@related.Slug"
-                       class="d-block text-decoration-none text-dark mb-3 pb-3 border-bottom">
+                       class="d-block text-decoration-none text-dark mb-3 pb-3 border-bottom related-item">
+                        <!-- Ảnh nhỏ -->
+                        <div style="height:80px;overflow:hidden;border-radius:8px;background:#f3f4f6;margin-bottom:8px">
+                            @if (!string.IsNullOrEmpty(related.ThumbnailUrl))
+                            {
+                                <img src="@related.ThumbnailUrl" style="width:100%;height:100%;object-fit:cover" />
+                            }
+                            else
+                            {
+                                <div class="d-flex align-items-center justify-content-center h-100"
+                                     style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+                                    <span style="font-size:2rem">📰</span>
+                                </div>
+                            }
+                        </div>
                         <div class="small fw-semibold">@related.Title</div>
                         <div class="text-muted" style="font-size:0.75rem">
                             @related.CreatedAt.ToString("dd/MM/yyyy")
@@ -65,5 +95,29 @@
                 }
             </div>
         </div>
+
+        <!-- Danh mục -->
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3">🏷️ Danh mục</h6>
+                @foreach (var cat in new[] { "Bóng đá", "Cầu lông", "Bóng chuyền", "Bóng rổ", "Pickleball", "Tổng hợp" })
+                {
+                    <a asp-page="/News/Index" asp-route-category="@cat"
+                       class="d-block text-decoration-none py-1 border-bottom small text-muted hover-primary">
+                        → @cat
+                    </a>
+                }
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+    .related-item:hover {
+        opacity: 0.8;
+    }
+
+    .hover-primary:hover {
+        color: var(--primary) !important;
+    }
+</style>

@@ -12,7 +12,7 @@
 }
 
 <!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="mb-3">
+<nav class="mb-3">
     <ol class="breadcrumb small">
         <li class="breadcrumb-item"><a asp-page="/Index">Trang chủ</a></li>
         <li class="breadcrumb-item"><a asp-page="/Courts/Index">Đặt sân</a></li>
@@ -21,13 +21,32 @@
 </nav>
 
 <div class="row g-4">
-    <!-- Thông tin sân -->
+    <!-- Cột trái: Thông tin sân -->
     <div class="col-lg-4">
-        <div class="card border-0 shadow-sm">
+
+        <!-- Ảnh sân -->
+        <div class="card border-0 shadow-sm mb-3" style="overflow:hidden;border-radius:12px!important">
+            <div style="height:220px;overflow:hidden;background:#f3f4f6">
+                @if (!string.IsNullOrEmpty(Model.Court.ImageUrl))
+                {
+                    <img src="@Model.Court.ImageUrl" alt="@Model.Court.Name"
+                         style="width:100%;height:100%;object-fit:cover" />
+                }
+                else
+                {
+                    <div class="d-flex align-items-center justify-content-center h-100"
+                         style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">
+                        <span style="font-size:5rem">@Model.Court.SportType.Icon</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Thông tin chi tiết -->
+        <div class="card border-0 shadow-sm mb-3">
             <div class="card-body">
                 <div class="text-center mb-3">
-                    <div style="font-size:3rem">@Model.Court.SportType.Icon</div>
-                    <h5 class="fw-bold mt-2">@Model.Court.Name</h5>
+                    <h5 class="fw-bold mb-1">@Model.Court.Name</h5>
                     <span class="badge bg-primary">@Model.Court.SportType.Name</span>
                 </div>
                 <hr>
@@ -35,13 +54,11 @@
                 {
                     <p class="text-muted small">@Model.Court.Description</p>
                 }
-                <div class="d-flex justify-content-between align-items-center">
-                    <span class="text-muted small">Giá thuê / giờ</span>
-                    <span class="fw-bold text-success fs-5">
-                        @Model.Court.PricePerHour.ToString("N0") VNĐ
-                    </span>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-muted small">Giá / giờ</span>
+                    <span class="fw-bold text-success fs-5">@Model.Court.PricePerHour.ToString("N0") VNĐ</span>
                 </div>
-                <div class="d-flex justify-content-between mt-2">
+                <div class="d-flex justify-content-between">
                     <span class="text-muted small">Giờ hoạt động</span>
                     <span class="small fw-semibold">06:00 - 22:00</span>
                 </div>
@@ -49,38 +66,36 @@
         </div>
 
         <!-- Chú thích -->
-        <div class="card border-0 shadow-sm mt-3">
+        <div class="card border-0 shadow-sm">
             <div class="card-body">
                 <h6 class="fw-semibold mb-3">Chú thích</h6>
                 <div class="d-flex align-items-center gap-2 mb-2">
-                    <div style="width:28px;height:28px;background:#d1fae5;border-radius:6px;border:1px solid #6ee7b7"></div>
+                    <div style="width:28px;height:28px;background:#d1fae5;border-radius:6px;border:1px solid #6ee7b7">
+                    </div>
                     <span class="small">Còn trống — có thể đặt</span>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <div style="width:28px;height:28px;background:#fee2e2;border-radius:6px;border:1px solid #fca5a5"></div>
+                    <div style="width:28px;height:28px;background:#fee2e2;border-radius:6px;border:1px solid #fca5a5">
+                    </div>
                     <span class="small">Đã được đặt</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Lịch đặt sân -->
+    <!-- Cột phải: Lịch đặt sân -->
     <div class="col-lg-8">
         <div class="card border-0 shadow-sm">
             <div class="card-body">
 
                 <!-- Chọn ngày -->
-                <div class="d-flex align-items-center gap-3 mb-4">
-                    <h6 class="fw-bold mb-0">Chọn ngày:</h6>
+                <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+                    <h6 class="fw-bold mb-0">📅 Chọn ngày:</h6>
                     <form method="get" class="d-flex gap-2 align-items-center">
                         <input type="hidden" name="id" value="@Model.Id" />
-                        <input type="date"
-                               name="selectedDate"
-                               value="@Model.SelectedDate.ToString("yyyy-MM-dd")"
-                               min="@DateTime.Today.ToString("yyyy-MM-dd")"
-                               class="form-control form-control-sm"
-                               style="width:160px"
-                               onchange="this.form.submit()" />
+                        <input type="date" name="selectedDate" value="@Model.SelectedDate.ToString("yyyy-MM-dd")"
+                               min="@DateTime.Today.ToString("yyyy-MM-dd")" class="form-control form-control-sm"
+                               style="width:160px" onchange="this.form.submit()" />
                     </form>
                     <span class="text-muted small">
                         @Model.SelectedDate.ToString("dddd, dd/MM/yyyy")
@@ -92,15 +107,15 @@
                     @foreach (var slot in Model.TimeSlots)
                     {
                         var isBooked = Model.IsSlotBooked(slot);
-                        var endSlot  = slot.AddHours(1);
-                        var label    = $"{slot:HH:mm} - {endSlot:HH:mm}";
+                        var endSlot = slot.AddHours(1);
+                        var label = $"{slot:HH:mm} - {endSlot:HH:mm}";
 
                         if (isBooked)
                         {
                             <div class="col-6 col-md-4 col-lg-3">
                                 <div class="p-2 text-center rounded small fw-semibold"
                                      style="background:#fee2e2;border:1px solid #fca5a5;color:#991b1b;cursor:not-allowed">
-                                    @label<br/>
+                                    @label<br />
                                     <span style="font-size:0.7rem;font-weight:normal">Đã đặt</span>
                                 </div>
                             </div>
@@ -110,13 +125,11 @@
                             <div class="col-6 col-md-4 col-lg-3">
                                 @if (User.Identity?.IsAuthenticated == true)
                                 {
-                                    <a asp-page="/Booking/Create"
-                                       asp-route-courtId="@Model.Court.Id"
+                                    <a asp-page="/Booking/Create" asp-route-courtId="@Model.Court.Id"
                                        asp-route-date="@Model.SelectedDate.ToString("yyyy-MM-dd")"
-                                       asp-route-start="@slot.ToString("HH:mm")"
-                                       asp-route-end="@endSlot.ToString("HH:mm")"
+                                       asp-route-start="@slot.ToString("HH:mm")" asp-route-end="@endSlot.ToString("HH:mm")"
                                        class="d-block p-2 text-center rounded small fw-semibold text-decoration-none slot-free">
-                                        @label<br/>
+                                        @label<br />
                                         <span style="font-size:0.7rem;font-weight:normal">Đặt ngay</span>
                                     </a>
                                 }
@@ -124,7 +137,7 @@
                                 {
                                     <a asp-page="/Auth/Login"
                                        class="d-block p-2 text-center rounded small fw-semibold text-decoration-none slot-free">
-                                        @label<br/>
+                                        @label<br />
                                         <span style="font-size:0.7rem;font-weight:normal">Đăng nhập để đặt</span>
                                     </a>
                                 }
@@ -137,16 +150,3 @@
         </div>
     </div>
 </div>
-
-<style>
-    .slot-free {
-        background: #d1fae5;
-        border: 1px solid #6ee7b7;
-        color: #065f46;
-        transition: background .15s;
-    }
-    .slot-free:hover {
-        background: #6ee7b7;
-        color: #064e3b;
-    }
-</style>

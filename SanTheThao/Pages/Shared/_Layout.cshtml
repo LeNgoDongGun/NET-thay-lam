@@ -11,11 +11,12 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" asp-page="/Index">🏟️ Sân Thể Thao</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -41,29 +42,38 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">⚙️ Admin</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-page="/Admin/Dashboard">Dashboard</a></li>
-                                <li><a class="dropdown-item" asp-page="/Admin/Bookings">Quản lý đơn</a></li>
-                                <li><a class="dropdown-item" asp-page="/Admin/Courts">Quản lý sân</a></li>
-                                <li><a class="dropdown-item" asp-page="/Admin/Users">Quản lý tài khoản</a></li>
-                                <li><a class="dropdown-item" asp-page="/Admin/News">Quản lý tin tức</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Dashboard">📊 Dashboard</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Bookings">📋 Quản lý đơn</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Courts">🏟️ Quản lý sân</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Users">👥 Quản lý tài khoản</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/News">📰 Quản lý tin tức</a></li>
                             </ul>
                         </li>
                     }
                 </ul>
 
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     @if (User.Identity?.IsAuthenticated == true)
                     {
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                👤 @User.Identity.Name
+                            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#"
+                               data-bs-toggle="dropdown">
+                                <div
+                                    style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem">
+                                    @User.Identity.Name?.Substring(0,1).ToUpper()
+                                </div>
+                                @User.Identity.Name
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" asp-page="/Account/Profile">Thông tin cá nhân</a></li>
+                                <li><a class="dropdown-item" asp-page="/Account/Profile">👤 Thông tin cá nhân</a></li>
+                                <li><a class="dropdown-item" asp-page="/Booking/MyBookings">📋 Lịch sử đặt sân</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" asp-page="/Auth/Logout">Đăng xuất</a></li>
+                                <li><a class="dropdown-item text-danger" asp-page="/Auth/Logout">🚪 Đăng xuất</a></li>
                             </ul>
                         </li>
                     }
@@ -72,8 +82,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Auth/Login">Đăng nhập</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-light btn-sm px-3 ms-2" asp-page="/Auth/Register">Đăng ký</a>
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-outline-light btn-sm fw-semibold px-3" asp-page="/Auth/Register">Đăng ký</a>
                         </li>
                     }
                 </ul>
@@ -81,19 +91,95 @@
         </div>
     </nav>
 
+    <!-- NỘI DUNG -->
     <div class="container py-4">
         @RenderBody()
     </div>
 
-    <footer class="bg-light text-center text-muted py-3 mt-5 small border-top">
-        © 2025 Sân Thể Thao — Đặt sân nhanh, chơi vui!
-    </footer>
+    <!-- FOOTER -->
+    <footer style="background:#111827;color:rgba(255,255,255,0.7);margin-top:4rem;padding:3rem 0 1.5rem">
+        <div class="container">
+            <div class="row g-4 mb-4">
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
+                <!-- Brand -->
+                <div class="col-md-4">
+                    <div class="fw-bold fs-5 text-white mb-2">🏟️ Sân Thể Thao</div>
+                    <p class="small" style="color:rgba(255,255,255,0.55);line-height:1.8">
+                        Hệ thống đặt sân thể thao trực tuyến hàng đầu.<br />
+                        Nhanh chóng — Tiện lợi — Uy tín.
+                    </p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="social-btn">📘</a>
+                        <a href="#" class="social-btn">📸</a>
+                        <a href="#" class="social-btn">🎵</a>
+                    </div>
+                </div>
 
-</html>
+                <!-- Liên kết nhanh -->
+                <div class="col-md-2">
+                    <div class="fw-semibold text-white mb-3 small text-uppercase" style="letter-spacing:0.05em">Đặt sân
+                    </div>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a asp-page="/Courts/Index" asp-route-sportTypeId="1" class="footer-link">⚽
+                            Bóng đá</a></li>
+                            <li class="mb-2"><a asp-page="/Courts/Index" asp-route-sportTypeId="2" class="footer-link">🏸
+                                Cầu lông</a></li>
+                                <li class="mb-2"><a asp-page="/Courts/Index" asp-route-sportTypeId="3" class="footer-link">🏐
+                                    Bóng chuyền</a></li>
+                                    <li class="mb-2"><a asp-page="/Courts/Index" asp-route-sportTypeId="4" class="footer-link">🏀
+                                        Bóng rổ</a></li>
+                                        <li class="mb-2"><a asp-page="/Courts/Index" asp-route-sportTypeId="5" class="footer-link">🎾
+                                            Pickleball</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Hỗ trợ -->
+                                    <div class="col-md-2">
+                                        <div class="fw-semibold text-white mb-3 small text-uppercase" style="letter-spacing:0.05em">Hỗ trợ
+                                        </div>
+                                        <ul class="list-unstyled small">
+                                            <li class="mb-2"><a asp-page="/News/Index" class="footer-link">Tin tức</a></li>
+                                            <li class="mb-2"><a asp-page="/Auth/Register" class="footer-link">Đăng ký</a></li>
+                                            <li class="mb-2"><a asp-page="/Auth/Login" class="footer-link">Đăng nhập</a></li>
+                                            @if (User.Identity?.IsAuthenticated == true)
+                                            {
+                                                <li class="mb-2"><a asp-page="/Booking/MyBookings" class="footer-link">Lịch sử đặt</a></li>
+                                            }
+                                        </ul>
+                                    </div>
+
+                                    <!-- Liên hệ -->
+                                    <div class="col-md-4">
+                                        <div class="fw-semibold text-white mb-3 small text-uppercase" style="letter-spacing:0.05em">Liên hệ
+                                        </div>
+                                        <ul class="list-unstyled small" style="color:rgba(255,255,255,0.55)">
+                                            <li class="mb-2">📍 LeNgoDongGun, QuyNhon</li>
+                                            <li class="mb-2">📞 <a href="tel:0901234567" class="footer-link">0123456789</a></li>
+                                            <li class="mb-2">✉️ <a href="mailto:contact@santhethao.com"
+                                                                       class="footer-link">contact@santhethao.com</a></li>
+                                                <li class="mb-2">🕐 Mở cửa: 06:00 - 22:00 hàng ngày</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Divider -->
+                                    <div
+                                        style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
+                                        <span class="small" style="color:rgba(255,255,255,0.4)">
+                                            © 2025 Sân Thể Thao. All rights reserved.
+                                        </span>
+                                        <span class="small" style="color:rgba(255,255,255,0.4)">
+                                            Made with ❤️ by SanTheThao Team
+                                        </span>
+                                    </div>
+                                </div>
+                            </footer>
+
+                            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                            <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+                            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+                            @await RenderSectionAsync("Scripts", required: false)
+                        </body>
+
+                    </html>

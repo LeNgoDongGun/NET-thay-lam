@@ -11,8 +11,13 @@ namespace SanTheThao.Pages.Admin
     public class CourtsModel : PageModel
     {
         private readonly AppDbContext _db;
+        private readonly IWebHostEnvironment _env;
 
-        public CourtsModel(AppDbContext db) => _db = db;
+        public CourtsModel(AppDbContext db, IWebHostEnvironment env)
+        {
+            _db = db;
+            _env = env;
+        }
 
         public List<Court> Courts { get; set; } = new();
         public List<SportType> SportTypes { get; set; } = new();
@@ -21,6 +26,7 @@ namespace SanTheThao.Pages.Admin
         [BindProperty] public int SportTypeId { get; set; }
         [BindProperty] public decimal PricePerHour { get; set; }
         [BindProperty] public string Description { get; set; } = string.Empty;
+        [BindProperty] public IFormFile? ImageFile { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -31,24 +37,42 @@ namespace SanTheThao.Pages.Admin
             SportTypes = await _db.SportTypes.ToListAsync();
         }
 
-        // Thêm sân mới
         public async Task<IActionResult> OnPostAddAsync()
         {
             var court = new Court
             {
-                Name         = CourtName,
-                SportTypeId  = SportTypeId,
+                Name = CourtName,
+                SportTypeId = SportTypeId,
                 PricePerHour = PricePerHour,
-                Description  = Description,
-                IsActive     = true
+                Description = Description,
+                IsActive = true
             };
+
+            // Upload ảnh
+            if (ImageFile != null && ImageFile.Length > 0)
+                court.ImageUrl = await SaveImageAsync(ImageFile, $"court_{DateTime.Now.Ticks}");
+
             _db.Courts.Add(court);
             await _db.SaveChangesAsync();
             TempData["Message"] = $"Đã thêm sân \"{CourtName}\"";
             return RedirectToPage();
         }
 
-        // Ẩn / Hiện sân
+        // Upload ảnh cho sân đã có
+        public async Task<IActionResult> OnPostUploadImageAsync(int id)
+        {
+            var court = await _db.Courts.FindAsync(id);
+            if (court == null) return NotFound();
+
+            if (ImageFile != null && ImageFile.Length > 0)
+            {
+                court.ImageUrl = await SaveImageAsync(ImageFile, $"court_{id}");
+                await _db.SaveChangesAsync();
+                TempData["Message"] = $"Đã cập nhật ảnh sân \"{court.Name}\"";
+            }
+            return RedirectToPage();
+        }
+
         public async Task<IActionResult> OnPostToggleAsync(int id)
         {
             var court = await _db.Courts.FindAsync(id);
@@ -56,11 +80,21 @@ namespace SanTheThao.Pages.Admin
             {
                 court.IsActive = !court.IsActive;
                 await _db.SaveChangesAsync();
-                TempData["Message"] = court.IsActive
-                    ? $"Đã mở lại sân \"{court.Name}\""
-                    : $"Đã ẩn sân \"{court.Name}\"";
+                TempData["Message"] = court.IsActive ? $"Đã mở sân \"{court.Name}\"" : $"Đã ẩn sân \"{court.Name}\"";
             }
             return RedirectToPage();
+        }
+
+        private async Task<string> SaveImageAsync(IFormFile file, string name)
+        {
+            var ext = Path.GetExtension(file.FileName).ToLower();
+            var folder = Path.Combine(_env.WebRootPath, "images", "courts");
+            Directory.CreateDirectory(folder);
+            var fileName = $"{name}{ext}";
+            var path = Path.Combine(folder, fileName);
+            using var stream = System.IO.File.Create(path);
+            await file.CopyToAsync(stream);
+            return $"/images/courts/{fileName}";
         }
     }
 }

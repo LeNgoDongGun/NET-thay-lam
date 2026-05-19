@@ -19,9 +19,9 @@
 <div class="card border-0 shadow-sm mb-4">
     <div class="card-body">
         <h6 class="fw-bold mb-3">✍️ Đăng bài viết mới</h6>
-        <form method="post" asp-page-handler="Add">
+        <form method="post" asp-page-handler="Add" enctype="multipart/form-data">
             <div class="row g-3">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <label class="form-label small fw-semibold">Tiêu đề</label>
                     <input name="Title" class="form-control form-control-sm" placeholder="Tiêu đề bài viết" required />
                 </div>
@@ -36,9 +36,9 @@
                         <option>Tổng hợp</option>
                     </select>
                 </div>
-                <div class="col-md-3">
-                    <label class="form-label small fw-semibold">Slug URL (tuỳ chọn)</label>
-                    <input name="Slug" class="form-control form-control-sm" placeholder="tu-dong-tao" />
+                <div class="col-md-4">
+                    <label class="form-label small fw-semibold">Ảnh thumbnail</label>
+                    <input name="ThumbnailFile" type="file" accept="image/*" class="form-control form-control-sm" />
                 </div>
                 <div class="col-12">
                     <label class="form-label small fw-semibold">Tóm tắt</label>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-12">
                     <label class="form-label small fw-semibold">Nội dung</label>
-                    <textarea name="PostContent" class="form-control form-control-sm" rows="6"
+                    <textarea name="PostContent" class="form-control form-control-sm" rows="5"
                               placeholder="Nội dung đầy đủ của bài viết..." required></textarea>
                 </div>
                 <div class="col-12">
@@ -58,61 +58,63 @@
     </div>
 </div>
 
-<!-- Danh sách bài viết -->
-<div class="card border-0 shadow-sm">
-    <div class="card-body p-0">
-        <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0 small">
-                <thead class="table-light">
-                    <tr>
-                        <th class="ps-3">Tiêu đề</th>
-                        <th>Danh mục</th>
-                        <th>Tác giả</th>
-                        <th>Ngày đăng</th>
-                        <th>Trạng thái</th>
-                        <th class="text-center">Thao tác</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var post in Model.Posts)
+<!-- Danh sách bài viết dạng card -->
+<div class="row g-3">
+    @foreach (var post in Model.Posts)
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100 @(!post.IsPublished ? "opacity-50" : "")">
+                <!-- Ảnh -->
+                <div style="height:150px;overflow:hidden;border-radius:12px 12px 0 0;background:#f3f4f6">
+                    @if (!string.IsNullOrEmpty(post.ThumbnailUrl))
                     {
-                        <tr class="@(!post.IsPublished ? "opacity-50" : "")">
-                            <td class="ps-3 fw-semibold" style="max-width:300px">@post.Title</td>
-                            <td><span class="badge bg-primary">@post.Category</span></td>
-                            <td>@post.Author.FullName</td>
-                            <td>@post.CreatedAt.ToString("dd/MM/yyyy")</td>
-                            <td>
-                                @if (post.IsPublished)
-                                {
-                                    <span class="badge bg-success">Đã đăng</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">Đã ẩn</span>
-                                }
-                            </td>
-                            <td class="text-center">
-                                <div class="d-flex gap-1 justify-content-center">
-                                    <a asp-page="/News/Detail" asp-route-slug="@post.Slug"
-                                       class="btn btn-outline-primary btn-sm" target="_blank">👁</a>
-                                    <form method="post" asp-page-handler="Toggle" class="d-inline">
-                                        <input type="hidden" name="id" value="@post.Id" />
-                                        <button type="submit"
-                                                class="btn btn-sm @(post.IsPublished ? "btn-outline-secondary" : "btn-outline-success")">
-                                            @(post.IsPublished ? "Ẩn" : "Hiện")
-                                        </button>
-                                    </form>
-                                    <form method="post" asp-page-handler="Delete" class="d-inline">
-                                        <input type="hidden" name="id" value="@post.Id" />
-                                        <button type="submit" class="btn btn-outline-danger btn-sm"
-                                                onclick="return confirm('Xoá bài viết này?')">🗑</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        <img src="@post.ThumbnailUrl" style="width:100%;height:100%;object-fit:cover" />
                     }
-                </tbody>
-            </table>
+                    else
+                    {
+                        <div class="d-flex align-items-center justify-content-center h-100"
+                             style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+                            <span style="font-size:3rem">📰</span>
+                        </div>
+                    }
+                </div>
+
+                <div class="card-body pb-2">
+                    <span class="badge bg-primary mb-1" style="font-size:0.7rem">@post.Category</span>
+                    <h6 class="fw-bold small mb-1">@post.Title</h6>
+                    <div class="text-muted" style="font-size:0.75rem">
+                        @post.CreatedAt.ToString("dd/MM/yyyy") •
+                        @if (post.IsPublished)
+                        {
+                            <span class="text-success">Đã đăng</span>
+                        }
+                        else
+                        {
+                            <span class="text-secondary">Đã ẩn</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="card-footer bg-transparent border-0 pt-0">
+                    <div class="d-flex gap-2">
+                        <a asp-page="/News/Detail" asp-route-slug="@post.Slug" class="btn btn-outline-primary btn-sm"
+                           target="_blank">👁 Xem</a>
+                        <form method="post" asp-page-handler="Toggle" class="d-inline">
+                            <input type="hidden" name="id" value="@post.Id" />
+                            @{
+                                var cls = post.IsPublished ? "btn-outline-secondary" : "btn-outline-success";
+                                var txt = post.IsPublished ? "Ẩn" : "Hiện";
+                            }
+                            <button type="submit" class="btn btn-sm @cls">@txt</button>
+                        </form>
+                        <form method="post" asp-page-handler="Delete" class="d-inline ms-auto">
+                            <input type="hidden" name="id" value="@post.Id" />
+                            <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    onclick="return confirm('Xoá bài viết này?')">🗑</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    }
 </div>

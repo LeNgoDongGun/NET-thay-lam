@@ -9,6 +9,7 @@ namespace SanTheThao.Pages
     {
         private readonly AppDbContext _db;
 
+
         public IndexModel(AppDbContext db) => _db = db;
 
         public List<SportType> SportTypes { get; set; } = new();

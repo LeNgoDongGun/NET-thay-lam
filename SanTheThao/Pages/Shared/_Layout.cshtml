@@ -54,6 +54,13 @@
                         </li>
                     }
                 </ul>
+                <form method="get" asp-page="/Courts/Search" class="mb-3 d-flex gap-2">
+                    <input type="text" name="search" class="form-control" placeholder="Tìm tên sân..." />
+
+                    <button type="submit" class="btn btn-primary">
+                        🔍 Tìm
+                    </button>
+                </form>
 
                 <ul class="navbar-nav ms-auto align-items-center">
                     @if (User.Identity?.IsAuthenticated == true)

@@ -150,3 +150,46 @@
         </div>
     </div>
 </div>
+<h5>Đánh giá</h5>
+
+<form method="post">
+    <input type="hidden" asp-for="NewReview.CourtId" value="@Model.Court.Id" />
+
+    <select asp-for="NewReview.Rating" class="form-control mb-2">
+        <option value="5">5 sao</option>
+        <option value="4">4 sao</option>
+        <option value="3">3 sao</option>
+        <option value="2">2 sao</option>
+        <option value="1">1 sao</option>
+    </select>
+
+    <input asp-for="NewReview.UserName" class="form-control mb-2" placeholder="Tên của bạn" />
+
+    <textarea asp-for="NewReview.Comment" class="form-control mb-2" placeholder="Nhận xét"></textarea>
+
+    <button class="btn btn-primary">Gửi</button>
+</form>
+<hr />
+
+@if (!Model.Reviews.Any())
+{
+    <p>Chưa có đánh giá</p>
+}
+else
+{
+    @foreach (var r in Model.Reviews)
+    {
+        <div class="border p-2 mb-2">
+            <b>@r.UserName</b>
+
+            <div>
+                @for (int i = 0; i < r.Rating; i++)
+                {
+                    <span>⭐</span>
+                }
+            </div>
+
+            <p>@r.Comment</p>
+        </div>
+    }
+}

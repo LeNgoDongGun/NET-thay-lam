@@ -9,11 +9,16 @@ namespace SanTheThao.Pages.Courts
     {
         private readonly ICourtService _courtService;
         private readonly IBookingService _bookingService;
+        private readonly ReviewService _reviewService;
+        public List<Review> Reviews { get; set; } = new();
+        [BindProperty]
+        public Review NewReview { get; set; } = new();
 
-        public DetailModel(ICourtService courtService, IBookingService bookingService)
+        public DetailModel(ICourtService courtService, IBookingService bookingService, ReviewService reviewService)
         {
             _courtService = courtService;
             _bookingService = bookingService;
+            _reviewService = reviewService;
         }
 
         public Court? Court { get; set; }
@@ -40,7 +45,15 @@ namespace SanTheThao.Pages.Courts
             if (Court == null) return NotFound();
 
             BookedSlots = await _bookingService.GetBookedSlotsAsync(Id, SelectedDate);
+            Reviews = await _reviewService.GetByCourtIdAsync(Id);
             return Page();
+
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            await _reviewService.AddAsync(NewReview);
+
+            return RedirectToPage(new { id = NewReview.CourtId });
         }
 
         public bool IsSlotBooked(TimeOnly start)

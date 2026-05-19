@@ -12,6 +12,7 @@ namespace SanTheThao.Data
         public DbSet<Court> Courts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<NewsPost> NewsPosts { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

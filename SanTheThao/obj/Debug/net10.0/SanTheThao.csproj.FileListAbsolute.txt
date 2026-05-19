@@ -217,10 +217,10 @@ D:\NET thay lam\SanTheThao\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspace
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\NET thay lam\SanTheThao\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-y48ney56zt-y48ney56zt.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\pdec3t7xxc-{0}-fr7q2aak1r-fr7q2aak1r.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\94x23tl0ne-{0}-l3n5xuwxn8-l3n5xuwxn8.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\ileqxzcpdd-{0}-ilo7uva0vt-ilo7uva0vt.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\ri9ry2284x-{0}-qlccset4i1-qlccset4i1.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\523qs3whvj-{0}-xzw0cte36n-xzw0cte36n.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\lp1xx77gdp-{0}-jfsiqqwiad-jfsiqqwiad.gz
+D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-10g0cx0oep-10g0cx0oep.gz

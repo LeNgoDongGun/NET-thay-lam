@@ -13,6 +13,7 @@ namespace SanTheThao.Data
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<NewsPost> NewsPosts { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<PostReview> PostReviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

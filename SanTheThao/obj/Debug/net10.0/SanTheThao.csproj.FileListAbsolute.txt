@@ -223,4 +223,4 @@ D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\ileqxzcpdd-{0}-ilo7uva0v
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\ri9ry2284x-{0}-qlccset4i1-qlccset4i1.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\523qs3whvj-{0}-xzw0cte36n-xzw0cte36n.gz
 D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\lp1xx77gdp-{0}-jfsiqqwiad-jfsiqqwiad.gz
-D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-10g0cx0oep-10g0cx0oep.gz
+D:\NET thay lam\SanTheThao\obj\Debug\net10.0\compressed\fqipa5y5li-{0}-y48ney56zt-y48ney56zt.gz

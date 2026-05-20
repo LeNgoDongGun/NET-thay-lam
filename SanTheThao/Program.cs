@@ -10,6 +10,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<PostReviewService>();
+
 
 // ===== AUTHENTICATION =====
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

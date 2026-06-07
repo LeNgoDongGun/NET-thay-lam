@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,171 +8,192 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a class="navbar-brand" asp-page="/Index">🏟️ Sân <span style="color:var(--p1)">Thể Thao</span></a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" asp-page="/Index">🏟️ Sân <span style="color:var(--p1)">Thể Thao</span></a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="nav">
-            <ul class="navbar-nav me-auto gap-1">
-                <li class="nav-item"><a class="nav-link" asp-page="/Index">Trang chủ</a></li>
-                <li class="nav-item"><a class="nav-link" asp-page="/Courts/Index">Đặt sân</a></li>
-                <li class="nav-item"><a class="nav-link" asp-page="/News/Index">Tin tức</a></li>
-                @if (User.Identity?.IsAuthenticated == true)
-                {
-                    <li class="nav-item"><a class="nav-link" asp-page="/Booking/MyBookings">Lịch sử</a></li>
-                }
-                @if (User.IsInRole("Admin"))
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">⚙️ Admin</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" asp-page="/Admin/Dashboard">📊 Dashboard</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/Bookings">📋 Quản lý đơn</a></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/Courts">🏟️ Quản lý sân</a></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/Users">👥 Tài khoản</a></li>
-                            <li><a class="dropdown-item" asp-page="/Admin/News">📰 Tin tức</a></li>
-                        </ul>
-                    </li>
-                }
-            </ul>
-
-            <ul class="navbar-nav ms-auto align-items-center gap-1">
-                @if (User.Identity?.IsAuthenticated == true)
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown">
-                            <div class="nav-avatar">@User.Identity.Name?.Substring(0,1).ToUpper()</div>
-                            <span class="d-none d-md-inline">@User.Identity.Name</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li class="px-3 py-2 border-bottom" style="border-color:rgba(255,255,255,0.1)!important">
-                                <div class="text-white fw-semibold small">@User.Identity.Name</div>
-                                <div style="color:rgba(255,255,255,0.4);font-size:0.75rem">@(User.IsInRole("Admin") ? "Quản trị viên" : "Thành viên")</div>
-                            </li>
-                            <li><a class="dropdown-item mt-1" asp-page="/Account/Profile">👤 Thông tin cá nhân</a></li>
-                            <li><a class="dropdown-item" asp-page="/Booking/MyBookings">📋 Lịch sử đặt sân</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" style="color:#f87171" asp-page="/Auth/Logout">🚪 Đăng xuất</a></li>
-                        </ul>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item"><a class="nav-link" asp-page="/Auth/Login">Đăng nhập</a></li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary btn-sm px-3 fw-semibold" asp-page="/Auth/Register">Đăng ký</a>
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- NỘI DUNG -->
-<div class="container py-4">
-    @RenderBody()
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-    <div class="container position-relative">
-        <div class="row g-4 mb-2">
-            <div class="col-lg-4">
-                <div class="footer-brand mb-2">🏟️ Sân <span>Thể Thao</span></div>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.875rem;line-height:1.8;max-width:280px">
-                    Hệ thống đặt sân thể thao trực tuyến — nhanh chóng, tiện lợi và uy tín.
-                </p>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="#" class="social-btn" title="Facebook">📘</a>
-                    <a href="#" class="social-btn" title="Instagram">📸</a>
-                    <a href="#" class="social-btn" title="TikTok">🎵</a>
-                    <a href="#" class="social-btn" title="YouTube">▶️</a>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="footer-heading">Đặt sân</div>
-                <div class="d-flex flex-column">
-                    <a asp-page="/Courts/Index" asp-route-sportTypeId="1" class="footer-link">⚽ Bóng đá</a>
-                    <a asp-page="/Courts/Index" asp-route-sportTypeId="2" class="footer-link">🏸 Cầu lông</a>
-                    <a asp-page="/Courts/Index" asp-route-sportTypeId="3" class="footer-link">🏐 Bóng chuyền</a>
-                    <a asp-page="/Courts/Index" asp-route-sportTypeId="4" class="footer-link">🏀 Bóng rổ</a>
-                    <a asp-page="/Courts/Index" asp-route-sportTypeId="5" class="footer-link">🎾 Pickleball</a>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-2">
-                <div class="footer-heading">Hỗ trợ</div>
-                <div class="d-flex flex-column">
-                    <a asp-page="/News/Index" class="footer-link">Tin tức</a>
-                    <a asp-page="/Auth/Register" class="footer-link">Đăng ký</a>
-                    <a asp-page="/Auth/Login" class="footer-link">Đăng nhập</a>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav me-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" asp-page="/Index">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-page="/Courts/Index">Đặt sân</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-page="/News/Index">Tin tức</a></li>
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <a asp-page="/Booking/MyBookings" class="footer-link">Lịch sử đặt</a>
-                        <a asp-page="/Account/Profile" class="footer-link">Tài khoản</a>
+                        <li class="nav-item"><a class="nav-link" asp-page="/Booking/MyBookings">Lịch sử</a></li>
                     }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">⚙️ Admin</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/Dashboard">📊 Dashboard</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Bookings">📋 Quản lý đơn</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Courts">🏟️ Quản lý sân</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/Users">👥 Tài khoản</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/News">📰 Tin tức</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+
+                <!-- Thanh tìm kiếm -->
+                <form method="get" asp-page="/Courts/Search" class="d-flex me-2 nav-search-form">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="search" class="form-control nav-search-input"
+                               placeholder="🔍 Tìm tên sân..." value="@(Context.Request.Query["search"].ToString())"
+                               autocomplete="off" />
+                        <button class="btn btn-primary btn-sm nav-search-btn" type="submit">Tìm</button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#"
+                               data-bs-toggle="dropdown">
+                                <div class="nav-avatar">@User.Identity.Name?.Substring(0,1).ToUpper()</div>
+                                <span class="d-none d-md-inline">@User.Identity.Name</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li class="px-3 py-2 border-bottom" style="border-color:rgba(255,255,255,0.1)!important">
+                                    <div class="text-white fw-semibold small">@User.Identity.Name</div>
+                                    <div style="color:rgba(255,255,255,0.4);font-size:0.75rem">@(User.IsInRole("Admin") ?
+                                                                                             "Quản trị viên" : "Thành viên")</div>
+                                    </li>
+                                    <li><a class="dropdown-item mt-1" asp-page="/Account/Profile">👤 Thông tin cá nhân</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Booking/MyBookings">📋 Lịch sử đặt sân</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" style="color:#f87171" asp-page="/Auth/Logout">🚪 Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-page="/Auth/Login">Đăng nhập</a></li>
+                            <li class="nav-item">
+                                <a class="btn btn-primary btn-sm px-3 fw-semibold" asp-page="/Auth/Register">Đăng ký</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
+        </nav>
 
-            <div class="col-lg-4">
-                <div class="footer-heading">Liên hệ</div>
-                <div class="footer-contact-item">📍 <span>123 Nguyễn Văn Linh, TP.HCM</span></div>
-                <div class="footer-contact-item">📞 <a href="tel:0901234567" class="footer-link">0901 234 567</a></div>
-                <div class="footer-contact-item">✉️ <a href="mailto:contact@santhethao.com" class="footer-link">contact@santhethao.com</a></div>
-                <div class="footer-contact-item">🕐 <span>Mở cửa 06:00 – 22:00 hàng ngày</span></div>
-            </div>
+        <!-- NỘI DUNG -->
+        <div class="container py-4">
+            @RenderBody()
         </div>
 
-        <div class="footer-bottom">
-            <span>© 2025 Sân Thể Thao. All rights reserved.</span>
-            <span>Made with ❤️ in Việt Nam</span>
-        </div>
-    </div>
-</footer>
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container position-relative">
+                <div class="row g-4 mb-2">
+                    <div class="col-lg-4">
+                        <div class="footer-brand mb-2">🏟️ Sân <span>Thể Thao</span></div>
+                        <p style="color:rgba(255,255,255,0.45);font-size:0.875rem;line-height:1.8;max-width:280px">
+                            Hệ thống đặt sân thể thao trực tuyến — nhanh chóng, tiện lợi và uy tín.
+                        </p>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="#" class="social-btn" title="Facebook">📘</a>
+                            <a href="#" class="social-btn" title="Instagram">📸</a>
+                            <a href="#" class="social-btn" title="TikTok">🎵</a>
+                            <a href="#" class="social-btn" title="YouTube">▶️</a>
+                        </div>
+                    </div>
 
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+                    <div class="col-6 col-lg-2">
+                        <div class="footer-heading">Đặt sân</div>
+                        <div class="d-flex flex-column">
+                            <a asp-page="/Courts/Index" asp-route-sportTypeId="1" class="footer-link">⚽ Bóng đá</a>
+                            <a asp-page="/Courts/Index" asp-route-sportTypeId="2" class="footer-link">🏸 Cầu lông</a>
+                            <a asp-page="/Courts/Index" asp-route-sportTypeId="3" class="footer-link">🏐 Bóng chuyền</a>
+                            <a asp-page="/Courts/Index" asp-route-sportTypeId="4" class="footer-link">🏀 Bóng rổ</a>
+                            <a asp-page="/Courts/Index" asp-route-sportTypeId="5" class="footer-link">🎾 Pickleball</a>
+                        </div>
+                    </div>
 
-<script>
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-        }
-    });
-}, { threshold: 0.1 });
+                    <div class="col-6 col-lg-2">
+                        <div class="footer-heading">Hỗ trợ</div>
+                        <div class="d-flex flex-column">
+                            <a asp-page="/News/Index" class="footer-link">Tin tức</a>
+                            <a asp-page="/Auth/Register" class="footer-link">Đăng ký</a>
+                            <a asp-page="/Auth/Login" class="footer-link">Đăng nhập</a>
+                            @if (User.Identity?.IsAuthenticated == true)
+                            {
+                                <a asp-page="/Booking/MyBookings" class="footer-link">Lịch sử đặt</a>
+                                <a asp-page="/Account/Profile" class="footer-link">Tài khoản</a>
+                            }
+                        </div>
+                    </div>
 
-document.querySelectorAll('.reveal').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+                    <div class="col-lg-4">
+                        <div class="footer-heading">Liên hệ</div>
+                        <div class="footer-contact-item">📍 <span>123 Nguyễn Văn Linh, TP.HCM</span></div>
+                        <div class="footer-contact-item">📞 <a href="tel:0901234567" class="footer-link">0901 234 567</a>
+                        </div>
+                        <div class="footer-contact-item">✉️ <a href="mailto:contact@santhethao.com"
+                                                                   class="footer-link">contact@santhethao.com</a></div>
+                            <div class="footer-contact-item">🕐 <span>Mở cửa 06:00 – 22:00 hàng ngày</span></div>
+                        </div>
+                    </div>
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(15,23,42,0.98)';
-    } else {
-        nav.style.background = 'rgba(15,23,42,0.92)';
-    }
-});
-</script>
+                    <div class="footer-bottom">
+                        <span>© 2025 Sân Thể Thao. All rights reserved.</span>
+                        <span>Made with ❤️ in Việt Nam</span>
+                    </div>
+                </div>
+            </footer>
 
-@await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+            <script>
+                // Scroll reveal
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+                }
+                });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.reveal').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+                });
+
+                // Navbar scroll effect
+                window.addEventListener('scroll', () => {
+                const nav = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                nav.style.background = 'rgba(15,23,42,0.98)';
+                } else {
+                nav.style.background = 'rgba(15,23,42,0.92)';
+                }
+                });
+            </script>
+
+            @await RenderSectionAsync("Scripts", required: false)
+        </body>
+
+    </html>
